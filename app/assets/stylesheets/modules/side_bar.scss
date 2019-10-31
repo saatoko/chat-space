@@ -1,41 +1,4 @@
-.chat-side {
-  width: 300px;
-  color: $white;
-  float: left;
-  box-sizing: border-box;
-  height: 100vh;
-  .side-header {
-    background-color: $side_blue_dark;
-    height: 100px;
-    display: flex;
-    align-items: center;
-    padding: 0 20px;
-    .side-header__box {
-      justify-content: space-between;
-      display: flex;
-      width: 100%;
-      &__name{
-        font-weight: bold;
-        font-size: $side_header_font;
-        display: inline-block;
-      }
-      &__menus {
-        display: flex;
-        list-style: none;
-        .menu {
-          display: inline-block;
-          .icon {
-            color: $white;
-            margin-left: 0.3rem;
-            font-size: $side_header_font;
-          }
-        }
-      }
-    }
-  }
-}
 
-    
 
 
 // .chat-side {
