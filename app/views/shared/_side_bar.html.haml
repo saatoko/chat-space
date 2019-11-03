@@ -1,0 +1,28 @@
+.chat-side
+  .side-header
+    .side-header__box
+      %h3.side-header__box__name
+        A子
+      %ul.side-header__box__menus
+        %li.menu
+          =link_to "#", class: "icon" do
+            = fa_icon 'edit'
+        %li.menu
+          =link_to "#", class: "icon" do
+            = fa_icon 'cog'
+  .groups
+    .group
+      .group__name
+        グループ①
+      .group__message
+        おはよう
+    .group
+      .group__name
+        グループ②
+      .group__message
+        こんにちは
+    .group
+      .group__name
+        グループ③
+      .group__message
+        さようなら
