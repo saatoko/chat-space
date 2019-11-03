@@ -2,55 +2,56 @@
 
   = render 'shared/side_bar'
 
-  -# .chat-main
-  -#   .main-header
-  -#     .left-box
-  -#       .left-box__titile
-  -#         グループ名
-  -#       %ul.left-box__members
-  -#         Member:
-  -#         %li.member
-  -#           A子
-  -#         %li.member
-  -#           B子
-  -#         %li.member
-  -#           C子
-  -#     .right-box
-  -#       .right-box__button
-  -#         Edit 
-  -#   .messages
-  -#     .message
-  -#       .upper-info
-  -#         .upper-info__talker
-  -#           A子
-  -#         .upper-info__date
-  -#           2019/10/26(Sat) 18:23:17
-  -#       .message-text
-  -#         .message-text__content
-  -#           おはよう
-  -#     .message
-  -#       .upper-info
-  -#         .upper-info__talker
-  -#           B子
-  -#         .upper-info__date
-  -#           2019/10/28(man) 18:33:19
-  -#       .message__text
-  -#         .message__text__content
-  -#           こんにちは
-  -#     .message
-  -#       .message__upper-info
-  -#         .message__upper-info__talker
-  -#           C子
-  -#         .message__upper-info__date
-  -#           2019/10/26(Sat) 18:43:25
-  -#       .message__text
-  -#         .message__text__content
-  -#           さようなら
-  -#   .form
-  -#     %form
-  -#       %input.form__message
-  -#       .form__box
-  -#         %label.form__box__image
-  -#           =fa_icon 'image', class: 'icon'
-  -#           %input.hidden{type: 'file'}
-  -#       %input.form__submit{type: 'submit', value: 'Send'}
+  .chat-main
+    .main-header
+      .left-box
+        .left-box__title
+          グループ①
+        %ul.left-box__members
+          Member:
+          %li.member
+            A子
+          %li.member
+            B子
+          %li.member
+            C子
+      .right-box
+        .right-box__button
+          Edit
+    .messages
+      .message
+        .upper-message
+          .upper-message__user-name
+            A子
+          .upper-message__date
+            2019/10/26(Sat) 18:23:17
+        .lower-meesage
+          .lower-message__content
+            おはよう
+      .message
+        .upper-message
+          .upper-message__user-name
+            B子
+          .upper-message__date
+            2019/10/28(man) 18:23:17
+        .lower-meesage
+          .lower-message__content
+            こんにちは
+      .message
+        .upper-message
+          .upper-message__user-name
+            C子
+          .upper-message__date
+            2019/10/26(Sat) 18:23:17
+        .lower-meesage
+          .lower-message__content
+            さようなら
+    .form
+      %form
+        .form__message
+          .form__message__box
+            %input.form__message__box__text{type: 'text', name: 'message', placeholder: 'type a message'}
+            %label.form__message__box__image
+              =fa_icon 'image', class: 'icon'
+              %input.hidden{type: 'file'}
+          %input.form__message__submit{type: 'submit', value: 'Send'}
