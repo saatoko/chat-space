@@ -25,8 +25,8 @@
 |user_id|references|null: false, foreign_key: true|
 |group_id|references|null: false, foreign_key: true|
 ### Association
-- belong_to :group
-- belong_to :user
+- belongs_to :group
+- belongs_to :user
 
 ## messagesテーブル
 |Column|Type|Option|
@@ -37,4 +37,4 @@
 |user_id|references|null: false, foreign_key: true|
 ### Association
 - belongs_to :user
-- belongs_to : group
+- belongs_to :group
