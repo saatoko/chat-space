@@ -18,34 +18,9 @@
       .right-box
         .right-box__button
           Edit
+
     .messages
-      .message
-        .upper-message
-          .upper-message__user-name
-            A子
-          .upper-message__date
-            2019/10/26(Sat) 18:23:17
-        .lower-meesage
-          .lower-message__content
-            おはよう
-      .message
-        .upper-message
-          .upper-message__user-name
-            B子
-          .upper-message__date
-            2019/10/28(man) 18:23:17
-        .lower-meesage
-          .lower-message__content
-            こんにちは
-      .message
-        .upper-message
-          .upper-message__user-name
-            C子
-          .upper-message__date
-            2019/10/26(Sat) 18:23:17
-        .lower-meesage
-          .lower-message__content
-            さようなら
+      = render @messages
    
     .form
       = form_for [@group, @message] do |f|
@@ -57,15 +32,15 @@
               = f.file_field :image, class: 'hidden'
           = f.submit 'Send', class: 'form__message__submit'
 
-    -#  .form
-    -#   %form
-    -#     .form__message
-    -#       .form__message__box
-    -#         %input.form__message__box__text{type: 'text', name: 'message', placeholder: 'type a message'}
-    -#         %label.form__message__box__image
-    -#           =fa_icon 'image', class: 'icon'
-    -#           %input.hidden{type: 'file'}
-    -#       %input.form__message__submit{type: 'submit', value: 'Send'}
+    -# .form
+    -# %form
+    -#   .form__message
+    -#     .form__message__box
+    -#       %input.form__message__box__text{type: 'text', name: 'message', placeholder: 'type a message'}
+    -#       %label.form__message__box__image
+    -#         =fa_icon 'image', class: 'icon'
+    -#         %input.hidden{type: 'file'}
+    -#     %input.form__message__submit{type: 'submit', value: 'Send'}
 
 
     
