@@ -46,12 +46,26 @@
         .lower-meesage
           .lower-message__content
             さようなら
+   
     .form
-      %form
+      = form_for [@group, @message] do |f|
         .form__message
           .form__message__box
-            %input.form__message__box__text{type: 'text', name: 'message', placeholder: 'type a message'}
-            %label.form__message__box__image
-              =fa_icon 'image', class: 'icon'
-              %input.hidden{type: 'file'}
-          %input.form__message__submit{type: 'submit', value: 'Send'}
+            = f.text_field :content, class: 'form__message__box__text', placeholder: 'type a message'
+            = f.label :image, class: 'form__message__box__image' do
+              = fa_icon 'image', class: 'icon'
+              = f.file_field :image, class: 'hidden'
+          = f.submit 'Send', class: 'form__message__submit'
+
+    -#  .form
+    -#   %form
+    -#     .form__message
+    -#       .form__message__box
+    -#         %input.form__message__box__text{type: 'text', name: 'message', placeholder: 'type a message'}
+    -#         %label.form__message__box__image
+    -#           =fa_icon 'image', class: 'icon'
+    -#           %input.hidden{type: 'file'}
+    -#       %input.form__message__submit{type: 'submit', value: 'Send'}
+
+
+    
