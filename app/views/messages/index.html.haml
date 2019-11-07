@@ -6,21 +6,26 @@
     .main-header
       .left-box
         .left-box__title
-          グループ①
+          -# = member.show_current_title
+          -# グループ①
+          = @group.name
         %ul.left-box__members
           Member:
           %li.member
-            A子
-          %li.member
-            B子
-          %li.member
-            C子
+            - @group.users.each do |user|
+              = user.name
+          -#   A子
+          -# %li.member
+          -#   B子
+          -# %li.member
+          -#   C子
       .right-box
         .right-box__button
           Edit
 
     .messages
       = render @messages
+      -# = render partial: 'message', collection: @messages 省略なしの場合、上の記述と同じ意味
    
     .form
       = form_for [@group, @message] do |f|
