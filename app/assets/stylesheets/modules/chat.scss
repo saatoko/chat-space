@@ -29,13 +29,15 @@
       }
     }
     .right-box {
-      height: 40px;
-      line-height: 40px;
-      padding: 0 20px;
-      margin-top: 28px;
-      border: solid 1px $light_blue;
-      color: $light_blue;
-      float: right;
+      .right-box__button{
+        height: 40px;
+        line-height: 40px;
+        padding: 0 20px;
+        margin-top: 28px;
+        border: solid 1px $light_blue;
+        color: $light_blue;
+        float: right;
+      }
     }
   }
   .messages {
