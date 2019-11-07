@@ -20,8 +20,8 @@
           -# %li.member
           -#   C子
       .right-box
-        .right-box__button
-          Edit
+        =link_to edit_group_path(@group) do
+          .right-box__button Edit
 
     .messages
       = render @messages
