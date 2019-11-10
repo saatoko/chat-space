@@ -41,6 +41,7 @@ $(function(){
         // console.log(html)    
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
         $('form')[0].reset();
+        $('#button').prop('disabled', false);
       })    
   })
 })
