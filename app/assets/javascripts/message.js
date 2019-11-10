@@ -38,7 +38,9 @@ $(function(){
         var html = buildHTML(data);
         // console.log(data)
         $('.messages').append(html);  
-        console.log(html)    
+        // console.log(html)    
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
+        $('form')[0].reset();
       })    
   })
 })
