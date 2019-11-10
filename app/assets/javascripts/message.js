@@ -36,7 +36,9 @@ $(function(){
     })
       .done(function(data){
         var html = buildHTML(data);
-        console.log(data)
+        // console.log(data)
+        $('.messages').append(html);  
+        console.log(html)    
       })    
   })
 })
