@@ -6,27 +6,19 @@
     .main-header
       .left-box
         .left-box__title
-          -# = member.show_current_title
-          -# グループ①
           = @group.name
         %ul.left-box__members
           Member:
           %li.member
             - @group.users.each do |user|
               = user.name
-          -#   A子
-          -# %li.member
-          -#   B子
-          -# %li.member
-          -#   C子
       .right-box
         =link_to edit_group_path(@group) do
           .right-box__button Edit
 
     .messages
       = render @messages
-      -# = render partial: 'message', collection: @messages 省略なしの場合、上の記述と同じ意味
-   
+      
     .form
       = form_for [@group, @message] do |f|
         .form__message
@@ -35,17 +27,4 @@
             = f.label :image, class: 'form__message__box__image' do
               = fa_icon 'image', class: 'icon'
               = f.file_field :image, class: 'hidden'
-          = f.submit 'Send', class: 'form__message__submit'
-
-    -# .form
-    -# %form
-    -#   .form__message
-    -#     .form__message__box
-    -#       %input.form__message__box__text{type: 'text', name: 'message', placeholder: 'type a message'}
-    -#       %label.form__message__box__image
-    -#         =fa_icon 'image', class: 'icon'
-    -#         %input.hidden{type: 'file'}
-    -#     %input.form__message__submit{type: 'submit', value: 'Send'}
-
-
-    
+          = f.submit 'Send', class: 'form__message__submit', id: 'button'
