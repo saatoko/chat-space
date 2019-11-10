@@ -42,9 +42,14 @@ $(function(){
         $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
         $('form')[0].reset();
         $('#button').prop('disabled', false);
-      })    
-  })
-})
+      })
+      .fail(function(){
+        alert('メッセージ送信に失敗しました');
+      });
+      return false;
+  });
+});
+
 
 // var a = 1;
     // if (a == 1) {
