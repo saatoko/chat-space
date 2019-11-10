@@ -54,6 +54,10 @@ $(function() {
       alert("ユーザー検索に失敗しました");
     })  
   });
+
+  $(document).on("click", ".chat-group-user__btn--add", function(pochi){
+    console.log(pochi)
+  });
 });
 
 
