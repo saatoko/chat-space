@@ -64,16 +64,8 @@ $(function() {
       var insertHTML = '';
       messages.forEach(function(message){
         insertHTML = buildHTML(message);
-        $(".message").append(inserHTML);
       })
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
-      console.log('success');
     })
-    .fail(function() {
-      alert("自動更新を行えませんでした。");
-      console.log('error');
-    });
   };
   setInterval(reloadMessages, 5000);
 });
-
