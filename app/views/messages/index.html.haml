@@ -5,7 +5,7 @@
   .chat-main
     .main-header
       .left-box
-        .left-box__title
+        .left-box__title{data: {"group_id": @group.id}}
           = @group.name
         %ul.left-box__members
           Member:
