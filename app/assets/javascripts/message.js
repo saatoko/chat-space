@@ -64,8 +64,8 @@ $(function() {
       var insertHTML = '';
       messages.forEach(function(message){
         insertHTML = buildHTML(message);
-      })
-    })
+      });
+    });
   };
   setInterval(reloadMessages, 5000);
 });
