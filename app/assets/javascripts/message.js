@@ -48,4 +48,24 @@ $(function(){
   });
 });
 
-
+$(function() {
+  //省略
+  
+  var reloadMessages = function() {
+    var last_message_id = $(".message:last").data("message-id");
+    var group_id= $(".left-box__title").data("group-id");
+    $.ajax({
+      url: `/groups/${group_id}/api/messages`,
+      type: 'get',
+      dataType: 'json',
+      data: {id: last_message_id},
+    })
+    .done(function(messages) {
+      var insertHTML = '';
+      messages.forEach(function(message){
+        insertHTML = buildHTML(message);
+      })
+    })
+  };
+  setInterval(reloadMessages, 5000);
+});
