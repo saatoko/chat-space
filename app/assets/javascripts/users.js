@@ -7,7 +7,6 @@ $(function() {
       </div>
     `;
     $("#user-search-result").append(html);
-    // console.log(html)
   }
 
   function addNoUser() {
@@ -17,7 +16,6 @@ $(function() {
       </div>
     `;
     $("#user-search-result").append(html);
-    // console.log(html)
   }
   function addDeleteUser(name, id) {
     let html = `
@@ -27,15 +25,6 @@ $(function() {
     </div>
     `;
     $(".js-add-user").append(html);
-
-    // <div class="ChatMember clearfix" id="${id}">
-    //   <p class="ChatMember__name">${name}</p>
-    //   <div class="ChatMember__remove ChatMember__button" data-user-id="${id}" data-user-name="${name}">削除</div>
-    // </div>`;
-    
-    
-    // $("#chat-group-user").append(html);
-    // console.log(html)
   }
   function addMember(userId) {
     let html = `<input value="${userId}" name="group[user_ids][]" type="hidden" id="group_user_ids_${userId}" />`;
@@ -61,7 +50,6 @@ $(function() {
       } else {
         addNoUser();
       }
-      // console.log(users);     
     }) 
     .fail(function() {
       alert("ユーザー検索に失敗しました");
