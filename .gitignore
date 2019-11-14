@@ -19,3 +19,4 @@ public/uploads/*
 
 # app/uploaders/image_uploader.rb
 /public/uploads/
+config/secrets.yml
