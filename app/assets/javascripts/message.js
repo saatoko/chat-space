@@ -9,7 +9,7 @@ $(function(){
             ${message.user_name}
           </div>
           <div class="upper-message__date">
-            ${message.date}
+            ${message.created_at}
           </div>
         </div>
       <div class="lower-message">
@@ -48,7 +48,7 @@ $(function(){
   });
 
   var reloadMessages = function() {
-    var last_message_id = $(".message:last").data("message-id");
+    var last_message_id = $('.messages').children().last().data("message-id");
     var group_id= $(".left-box__title").data("group-id");
     $.ajax({
       url: `/groups/${group_id}/api/messages`,
@@ -59,7 +59,7 @@ $(function(){
     .done(function(messages) {
       messages.forEach(function(message){
         var html = buildHTML(message);
-        $(".message").append(html);
+        $(".messages").append(html);
       });
       $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
     })
