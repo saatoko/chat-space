@@ -46,26 +46,27 @@ $(function(){
       });
       return false;
   });
-
+  var group_id= $(".left-box__title").data("group-id");
   var reloadMessages = function() {
-    var last_message_id = $('.messages').children().last().data("message-id");
-    var group_id= $(".left-box__title").data("group-id");
-    $.ajax({
-      url: `/groups/${group_id}/api/messages`,
-      type: 'get',
-      dataType: 'json',
-      data: {id: last_message_id},
-    })
-    .done(function(messages) {
-      messages.forEach(function(message){
-        var html = buildHTML(message);
-        $(".messages").append(html);
+    if(document.location.href.match(`/groups/${group_id}/messages`)){
+      var last_message_id = $('.messages').children().last().data("message-id");
+      $.ajax({
+        url: `/groups/${group_id}/api/messages`,
+        type: 'get',
+        dataType: 'json',
+        data: {id: last_message_id},
+      })
+      .done(function(messages) {
+        messages.forEach(function(message){
+          var html = buildHTML(message);
+          $(".messages").append(html);
+        });
+        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
+      })
+      .fail(function() {
+        alert("自動更新を行えませんでした。");
       });
-      $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
-    })
-    .fail(function() {
-      alert("自動更新を行えませんでした。");
-    });
+    };
   };
   setInterval(reloadMessages, 7000);
 });
