@@ -1,4 +1,4 @@
-$(function(){
+$(document).on("turbolinks:load", function(){
   function buildHTML(message){
     var image = (message.image !== null) ? `<img src=${message.image} >` : "";
 
@@ -22,30 +22,31 @@ $(function(){
     return html;
   }
 
-  $(".new_message").on("submit", function(e){
-    e.preventDefault()
-    var formData = new FormData(this);
-    var url = $(this).attr('action');
-    $.ajax({
-      url: url,
-      type: "POST",
-      data: formData,
-      dataType: 'json',
-      processData: false,
-      contentType: false
-    })
-      .done(function(data){
-        var html = buildHTML(data);
-        $('.messages').append(html);  
-        $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
-        $('form')[0].reset();
-        $('#button').prop('disabled', false);
+    $(".new_message").on("submit", function(e){
+      e.preventDefault()
+      var formData = new FormData(this);
+      var url = $(this).attr('action');
+      $.ajax({
+        url: url,
+        type: "POST",
+        data: formData,
+        dataType: 'json',
+        processData: false,
+        contentType: false
       })
-      .fail(function(){
-        alert('メッセージ送信に失敗しました');
-      });
-      return false;
-  });
+        .done(function(data){
+          var html = buildHTML(data);
+          $('.messages').append(html);  
+          $('.messages').animate({scrollTop: $('.messages')[0].scrollHeight}, 'fast');  
+          $('form')[0].reset();
+          $('#button').prop('disabled', false);
+        })
+        .fail(function(){
+          alert('メッセージ送信に失敗しました');
+        });
+        return false;
+    });
+
   var group_id= $(".left-box__title").data("group-id");
   var reloadMessages = function() {
     if(document.location.href.match(`/groups/${group_id}/messages`)){
